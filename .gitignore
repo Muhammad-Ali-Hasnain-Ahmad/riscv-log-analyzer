@@ -1,0 +1,17 @@
+# Output Files
+*.out
+*.tmp
+output/
+
+# Log Files (except test_data samples)
+*.log
+!test_data/*.log
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.history/
+*.swp
+*.swo
