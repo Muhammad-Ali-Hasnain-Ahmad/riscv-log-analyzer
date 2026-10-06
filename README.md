@@ -48,6 +48,8 @@ Individual Test Executions:
 --- Verdict: FAIL ---
 Exit code: 1
 
+---
+
 ## Directory Structure
 
 ```text
