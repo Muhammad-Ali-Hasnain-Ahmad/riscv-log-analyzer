@@ -13,8 +13,9 @@ A lightweight, automated Bash-based utility designed to process, parse, and anal
 
 ---
 
-## Sample Output
+### Sample Simulation Output
 
+```text
 === RISC-V Simulation Log Analysis ===
 Analysis date: 2026-10-06 17:42:36
 --- Results Summary ---
@@ -47,7 +48,7 @@ Individual Test Executions:
 ====================================
 --- Verdict: FAIL ---
 Exit code: 1
-
+```
 ---
 
 ## Directory Structure
