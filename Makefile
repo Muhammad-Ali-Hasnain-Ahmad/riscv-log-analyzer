@@ -1,6 +1,7 @@
 SCR_DIR = scripts
 BIN_DIR = bin
 LOG_DIR = test_data
+OUTPUT_DIR = output
 
 SCR = $(SCR_DIR)/analyze.sh
 
@@ -8,7 +9,7 @@ TARGET = $(SCR:$(SCR_DIR)/%.sh=$(BIN_DIR)/%)
 LOG_ARGS = $(LOG_DIR)/sample_sim.log
 LINTER = shellcheck
 REQUIRED_TOOLS = bash grep awk $(LINTER)
-.PHONY: all test dirs lint help setup
+.PHONY: all clean test dirs lint report help setup
 
 all: dirs $(TARGET)
 dirs:
@@ -19,6 +20,7 @@ $(BIN_DIR)/%: $(SCR_DIR)/%.sh
 	@chmod +x $@
 lint: ## Check shell scripts for hidden bugs/syntax errors using shellcheck
 	$(LINTER) $(SCR)
+
 setup: ## Check that all required system tools (bash, grep, awk, shellcheck) are installed
 	@echo 'Checking system dependencies...'
 	@errors=0; \
@@ -38,8 +40,12 @@ setup: ## Check that all required system tools (bash, grep, awk, shellcheck) are
 	echo ""; \
 	echo "\033[32mSetup complete! All required tools are ready.\033[0m"
 
+report:all ## Generates a summary report file inside the output/ directory
+	-./$(BIN_DIR)/analyze $(LOG_ARGS) > $(OUTPUT_DIR)/summary_report.csv
+
 test:all ## Runs main script directly to the terminal
 	-./$(BIN_DIR)/analyze $(LOG_ARGS)
+
 help: ## Display this help message showing all available options
 	@echo 'Usage: make [target]'
 	@echo ''
