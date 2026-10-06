@@ -40,6 +40,10 @@ setup: ## Check that all required system tools (bash, grep, awk, shellcheck) are
 	echo ""; \
 	echo "\033[32mSetup complete! All required tools are ready.\033[0m"
 
+clean: ## Clears binaries and output reports
+	@rm -rf $(BIN_DIR)
+	@rm -f $(OUTPUT_DIR)/summary_report.csv
+
 report:all ## Generates a summary report file inside the output/ directory
 	-./$(BIN_DIR)/analyze $(LOG_ARGS) > $(OUTPUT_DIR)/summary_report.csv
 
