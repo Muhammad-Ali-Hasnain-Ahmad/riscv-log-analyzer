@@ -16,5 +16,5 @@
 [2026-10-05 14:18:15] TEST PASS: Immediate Generation (4.95s)
 [2026-10-05 14:18:20] TEST START: Program Counter Increment (0.00s)
 [2026-10-05 14:18:25] TEST FAIL: Program Counter Increment (4.89s)
-[2026-10-05 14:18:30] TEST START: Pipeline Register IF/ID (0.00s)
-[2026-10-05 14:18:35] TEST SKIP: Pipeline Register IF/ID (0.02s)
+[2026-10-05 14:18:30] TEST Error: Pipeline Register IF (0.00s)
+[2026-10-05 14:18:35] TEST Fail: Pipeline Register IF (0.02s)
